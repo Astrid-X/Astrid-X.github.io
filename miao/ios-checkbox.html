@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ios checkbox</title>
+  <style>
+    input {
+      display: none;
+    }
+    .ioscheck > input + label {
+      width: 60px;
+      height: 30px;
+      display: inline-block;
+      padding: 3px;
+      background-color: #ddd;
+      border-radius: 999px;
+      transition: box-shadow .2s;
+      cursor: pointer;
+      box-shadow: 0px 0px 0px 0px #6edc5f inset;
+    }
+    .ioscheck > input + label::before {
+      content: '';
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      display: inline-block;
+      transition: margin-left .2s;
+      background-color: white;
+      box-shadow: 0px 3px 3px #aaa;
+    }
+    .ioscheck > input:checked +label {
+      box-shadow: 0px 0px 0px 18px #6edc5f inset;
+    }
+    .ioscheck > input:checked +label::before {
+      margin-left: 30px;
+    }
+    .ioscheck > input:active + label::before {
+      width: 32px;
+      border-radius: 13px;
+    }
+    .twitter > input + label {
+      vertical-align: bottom;
+      cursor: pointer;
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-image: url(https://abs.twimg.com/a/1526339738/img/animations/web_heart_animation_edge.png);
+    }
+    .twitter > input:checked + label {
+      background-position: -2800px 0px;
+      transition: 0.5s steps(28);
+    }
+  </style>
+</head>
+
+<body>
+    <div class="ioscheck">
+      <input type="checkbox" name="" id="ios">
+      <label for="ios"></label>
+    </div>
+    <div class="twitter">
+      <input type="checkbox" name="" id="ilike">
+      <label for="ilike"></label>
+    </div>
+</body>
+</html>
