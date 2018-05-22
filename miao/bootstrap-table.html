@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>table</title>
+  <style>
+    .moni {
+      width: 100%;
+      display: table;
+      border-collapse: collapse;
+      background-color: lightgrey;
+      border: 3px solid grey;
+    }
+    .moni span {
+      width: 1%;
+      white-space: pre;
+      border-right: 3px solid grey;
+    }
+    .moni input {
+      width: 100%;
+      border: none;
+      outline: none;
+    }
+    .moni input:focus {
+      box-shadow: 0 0 0 3px lightblue;
+    }
+    .moni input,span {
+      display: table-cell;
+      font: inherit;
+    }
+
+    .table {
+      display: table;
+      box-sizing: border-box;
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    .table-responsive thead th, 
+    .table-responsive tbody td {
+      white-space: nowrap;
+    }
+    .table-responsive {
+      overflow: auto;
+    }
+    .table-bordered tbody tr th, 
+    .table-bordered tbody tr td {
+      border: 1px solid lightgrey;
+    }
+    .table-striped tbody tr:nth-of-type(2n+1) {
+      background-color: grey;
+    }
+    body .table-hover tbody tr:hover {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="moni">
+    <span>请输入信息</span>
+    <input type="text" name="">
+  </div>
+  <br>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Lorem.</th>
+          <th>Asperiores!</th>
+          <th>Animi.</th>
+          <th>Quo.</th>
+          <th>Cum?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Lorem.</td>
+          <td>Dignissimos.</td>
+          <td>Sint?</td>
+          <td>Nam.</td>
+          <td>Asperiores.</td>
+        </tr>
+        <tr>
+          <td>Lorem.</td>
+          <td>Provident!</td>
+          <td>Voluptatibus.</td>
+          <td>Ad.</td>
+          <td>Possimus!</td>
+        </tr>
+        <tr>
+          <td>Lorem.</td>
+          <td>Quo.</td>
+          <td>Magni!</td>
+          <td>Incidunt.</td>
+          <td>Rem.</td>
+        </tr>
+        <tr>
+          <td>Lorem.</td>
+          <td>Nobis.</td>
+          <td>At.</td>
+          <td>Maxime!</td>
+          <td>Ipsum.</td>
+        </tr>
+        <tr>
+          <td>Lorem.</td>
+          <td>Placeat.</td>
+          <td>Id?</td>
+          <td>Ipsam.</td>
+          <td>Maiores.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
