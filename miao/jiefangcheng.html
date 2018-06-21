@@ -1,0 +1,54 @@
+
+<script>
+
+  alert('马上开始一元二次方程')
+
+  var a = +prompt('请输入非零数值a:')
+  var b = +prompt('请输入数值b:')
+  var c = +prompt('请输入数值c:')
+
+  var delta = b * b - 4 * a * c
+
+
+  if (delta > 0) {
+    var s_delta = Math.sqrt(delta)
+    var x1 = (-b + s_delta) / (2 * a)
+    var x2 = (-b - s_delta) / (2 * a)
+    console.log('x1='+x1+','+'x2='+x2)
+  } else {
+    if (delta == 0) {
+      var x = (-b) / (2 * a)
+      console.log('x='+x)
+    } else {
+      if (delta < 0) {
+        var s_delta = Math.sqrt(4 * a * c - b * b)
+        var y = 2 * a
+        var x1 = (-b + s_delta)
+        var x2 = (-b - s_delta)
+        console.log('x1='+(-b)+'+'+'(i *'+s_delta+') /'+y+','+'x2='+'(-b)'+'-'+'(i *'+s_delta+') /'+y+',')
+      }
+    }
+  }
+
+  var a = +prompt('请输入非零数值a:')
+  var b = +prompt('请输入非零数值b:')
+  var c = +prompt('请输入数值c:') 
+  var d = +prompt('请输入非零数值d:')
+  var e = +prompt('请输入非零数值e:')
+  var f = +prompt('请输入数值f:') 
+
+  alert('马上开始二元一次方程组')
+
+  if ((a / d) != (b / e)) {
+    var x = (c * e - b * f) / (a * e - b * d)
+    var y = (d * c - a * f) / (d * b - a * e)
+    console.log('x='+x+','+'y='+y)
+  } else {
+    if ((a / d) == (b / e) == (c / f)) {
+      console.log('该方程组有无数解')
+    } else {
+        console.log('该方程组无解')
+    }
+  } 
+  
+</script>
