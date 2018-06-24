@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="400" height="300"></canvas>
+</body>
+<script>
+  var cvs = document.querySelector('canvas')
+  var ctx = cvs.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+</script>
+<script>
+  // 实线
+  for (x = 0; x < 400; x = x + 1) {
+    dot(x, 10)
+  }
+  // 虚线1
+  for (x = 0; x < 400; x = x + 2) {
+    dot(x, 20)
+  }
+  // 虚线2
+  for (x = 0; x < 400; x = x + 4) {
+    dot(x, 30)
+    dot(x + 1, 30)
+  }
+  // 虚线3
+  for (x = 0; x < 400; x = x + 5) {
+    dot(x, 40)
+    dot(x + 1, 40)
+    dot(x + 2, 40)
+  }
+  // 45°斜线
+  for (x = 0; x < 300; x = x + 1) {
+    dot(x, x)
+  }
+  // 对角线
+  for (x = 0; x < 400; x = x + 1) {
+    dot(x, x * 3 / 4)
+  }
+  // 实心矩形
+  for (x = 150; x < 200; x = x + 1) {
+    for (y = 150; y < 200; y = y + 1) {
+      dot(x, y)
+    }
+  }
+  // 色彩空间的一个面
+  var green = 255
+  var blue = 0
+  for (x = 200; x < 250; x = x + 1) {
+    blue = blue + 5
+    for (y = 200; y < 250; y = y + 1) {
+      green = green - 5
+      dot(x, y, "rgb(255, "+ green +", "+ blue +")")
+    }
+    green = 255
+  }
+  // 空心圆
+  var n = 0
+  while(n < 360){
+    x =  100 + 50 * Math.cos(n * Math.PI / 180) 
+    y =  100 + 50 * Math.sin(n * Math.PI / 180) 
+    dot(x, y)
+    n = n + 1
+  }
+        
+  
+</script>
+</html>
