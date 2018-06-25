@@ -1,4 +1,4 @@
-<script id="ch0105/01/" type="">
+<script id="ch0105/01/">
   var n = Number(prompt('请输入学生人数：'))
   while (n < 1 || n > 100) {
     console.log('学生人数应在1到100人之间')
@@ -16,10 +16,10 @@
     }
     s_age = s_age + age
   }
-  console.log(n + '个学生的平均年龄为' + ((s_age / n).toFixed(2)))
+  console.log((s_age / n).toFixed(2))
 </script>
 
-<script id="ch0105/02/" type="">
+<script id="ch0105/02/">
   var s_surplus = 0
   var surplus
   var theNumber
@@ -32,10 +32,10 @@
     }
     s_surplus = s_surplus + surplus
   }
-  console.log('去年12个月的平均结余为$' + ((s_surplus / 12).toFixed(2)))
+  console.log((s_surplus / 12).toFixed(2))
 </script>
 
-<script id="ch0105/03" type="">
+<script id="ch0105/03">
   var n = Number(prompt('请输入样本容量：'))
   while (n >= 100) {
     console.log('样本容量不超过100')
@@ -54,10 +54,10 @@
     sum = sum + samples
   }
 
-  console.log('样本数据的平均值为' + ((sum / n).toFixed(4)))
+  console.log((sum / n).toFixed(4))
 </script>
 
-<script id="ch0105/04/" type="">
+<script id="ch0105/04/">
   var n = Number(prompt('请输入需要输入的整数个数：'))
   while (n < 1 || n > 10000) {
     console.log('整数的个数不超过10000')
@@ -76,10 +76,10 @@
     sum = sum + digital
   }
 
-  console.log('这' + n + '个整数的和为' + sum + ' ' + '这' + n + '个整数的均值为' + ((sum / n).toFixed(5)))
+  console.log(sum + ' ' + (sum / n).toFixed(5))
 </script>
 
-<script id="ch0105/05/" type="">
+<script id="ch0105/05/">
   var n = Number(prompt('请输入参加考试的学生人数：'))
   while (n < 1 || n >= 100) {
     console.log('参加考试学生人数应在1到100人之间（不包括100）')
@@ -100,10 +100,10 @@
     }
   }
 
-  console.log(n + '位学生中的最高分为' + max)
+  console.log(max)
 </script>
 
-<script id="ch0105/06/" type="">
+<script id="ch0105/06/">
   var n = Number(prompt('请输入序列的个数：'))
   while (n < 1 || n > 1000) {
     console.log('序列的个数应在1到1000之间')
@@ -128,10 +128,10 @@
     }
   }
 
-  console.log('序列的最大跨度值为' + (max - min))
+  console.log(max - min)
 </script>
 
-<script id="ch0105/07/" type="">
+<script id="ch0105/07/">
   var n = Number(prompt('请输入参加决赛项目的天数：'))
   while (n < 1 || n > 17) {
     console.log('参赛天数应在1到17天之间')
@@ -155,13 +155,10 @@
     s_copper = s_copper + copper
   }
 
-  console.log('A国在' + n + '天内获得了' + s_gold + '枚金牌，')
-  console.log(s_silver + '枚银牌，')
-  console.log(s_copper + '枚铜牌，')
-  console.log('共获得' + (s_gold + s_silver + s_copper) +'枚奖牌。')
+  console.log( s_gold + ' ' + s_silver + ' ' + s_copper + ' ' + (s_gold + s_silver + s_copper))
 </script>
 
-<script id="ch0105/08/" type="">
+<script id="ch0105/08/">
   var n = Number(prompt('请输入多边形角的个数：'))
   
   var angle
@@ -173,10 +170,10 @@
     sum = sum + angle
   }
 
-  console.log('未知角的度数为' + ((n  - 2) * 180 - sum))
+  console.log((n  - 2) * 180 - sum)
 </script>
 
-<script id="ch0105/09/" type=""> 
+<script id="ch0105/09/"> 
   var m = Number(prompt('请输入非负整数m：'))
   var n = Number(prompt('请输入非负整数n：'))
   var sum = 0
@@ -188,10 +185,10 @@
     }
   }
 
-  console.log('整数m到整数n之间所有的奇数和为' + sum)
+  console.log(sum)
 </script>
 
-<script id="ch0105/10/" type="">
+<script id="ch0105/10/">
   var m = Number(prompt('请输入正整数m：'))
   var n = Number(prompt('请输入正整数n：'))
   while (n < 0 || m > n || n > 1000) {
@@ -208,10 +205,10 @@
     }
   }
 
-  console.log('整数m到整数n之间能被17整除的数的和为' + sum)
+  console.log(sum)
 </script>
 
-<script id="ch0105/11/" type="">
+<script id="ch0105/11/">
   var k = Number(prompt('请输入正整数的个数：'))
   while (k <= 0 || k >= 100) {
     console.log('正整数的个数在1到100之间')
@@ -236,12 +233,12 @@
     }
   }
 
-  console.log('1出现的次数为' + counter1)
-  console.log('5出现的次数为' + counter2)
-  console.log('10出现的次数为' + counter3)
+  console.log(counter1)
+  console.log(counter2)
+  console.log(counter3)
 </script>
 
-<script id="ch0105/12/" type="">  
+<script id="ch0105/12/">  
   var N = Number(prompt('请输入整数序列的长度：'))
   var m = Number(prompt('请输入指定的数字m：'))
   while (N > 100) {
@@ -260,10 +257,10 @@
     }
   }
 
-  console.log('序列的' + N + '个正数中与指定的数字' + m + '相同的数的个数为' + counter)
+  console.log(counter)
 </script>
 
-<script id="ch0105/13/" type="">
+<script id="ch0105/13/">
   var a = Number(prompt('请输入整数a：'))
   var n = Number(prompt('请输入正整数n：'))
   while (a < -1000000 || a > 1000000) {
@@ -276,10 +273,10 @@
     var n = Number(prompt('请输入正整数n：'))
   }
  
-  console.log('整数' + a + '的' + n + '次方为' + (a ** n))
+  console.log(a ** n)
 </script>
 
-<script id="ch0105/14/" type="">
+<script id="ch0105/14/">
   var x = Number(prompt('请输入现有人口数（以亿为单位）：'))
   var n = Number(prompt('请输入增长年数：'))
   while (x < -1 || x > 100) {
@@ -296,10 +293,10 @@
     x = x * 1.001
   }
   
-  console.log((x.toFixed(4)))
+  console.log(x.toFixed(4))
 </script>
 
-<script id="ch0105/15/" type="">
+<script id="ch0105/15/">
   var r = Number(prompt('请输入投资的复合年利率：'))
   while (r < 0 ||  r > 20) {
     console.log('投资的复合年利率应为0到20年之间')
@@ -320,10 +317,10 @@
     m = m * (1 + r / 100)
   }
   
-  console.log('约翰最终拥有的钱为' + Math.trunc(m))
+  console.log(Math.trunc(m))
 </script>
 
-<script id="ch0105/16/" type="">
+<script id="ch0105/16/">
   var n = Number(prompt('请输入程序员的年薪（以万为单位）：'))
   while (n < 10 ||  n > 50) {
     console.log('程序员的年薪应为10到50万之间')
