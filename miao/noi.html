@@ -224,6 +224,30 @@
   console.log(n)*/
 </script>
 
+<script id="ch0103/01">
+  var a = +prompt('A:')
+  var b = +prompt('B:')
+
+  console.log(a + b)
+</script>
+
+<script id="ch0103/02">
+  var a = +prompt('a:')
+  var b = +prompt('b:')
+  var c = +prompt('c:')
+
+  console.log((a + b) * c)
+</script>
+
+<script id="ch0103/03">
+  var a = +prompt('a:')
+  var b = +prompt('b:')
+  var c = +prompt('c:')
+
+  var n = Math.floor((a + b) / c)
+  
+  console.log(n)
+
 <script id="/ch0103/04">
   var n = +prompt('被除数：')
   var m = +prompt('除数：')
@@ -232,6 +256,76 @@
   }
 
   console.log(n)
+</script>
+
+<script id="ch0103/05">
+  var a = +prompt('a:')
+  var b = +prompt('b:')
+  
+  console.log((a / b).toFixed(9))
+</script>
+
+<script id="ch0103/06">
+  var x = +prompt('确诊数:')
+  var y = +prompt('死亡数:')
+
+  var percent = y / x * 100
+  console.log(percent.toFixed(3) + '%')
+</script>
+
+<script id="ch0103/07">
+  var x = +prompt('x:')
+  var a = +prompt('a:')
+  var b = +prompt('b:')
+  var c = +prompt('c:')
+  var d = +prompt('d:')
+
+  var fx = a * Math.pow(x, 3) + b * Math.pow(x, 2) + (c * x) + d
+  console.log(fx.toFixed(7))
+</script>
+
+<script id="ch0103/08">
+  var f = +prompt('华氏温度:')
+
+  var c = 5 * (f - 32) / 9
+  
+  console.log(c.toFixed(5))
+</script>
+
+<script id="ch0103/09">
+  var r = +prompt('r:')
+
+  var PI = 3.14159
+ 
+  var dia = 2 * r
+  var cir = 2 * PI * r
+  var area = PI * r * r
+  console.log(dia.toFixed(4) + ' ' + cir.toFixed(4) + ' ' + area.toFixed(4))
+</script>
+
+<script id="ch0103/10">
+  var r1 = +prompt('r1:')
+  var r2 = +prompt('r2:')
+  var r = 1 / (1 / r1 + 1 / r2)
+  console.log(r.toFixed(2))
+</script>
+
+<script id="ch0103/11">
+  var a = +prompt('a:')
+  var b = +prompt('b:')
+
+  var k = Math.floor(a / b)
+  var r = a - k * b
+
+  console.log(r.toFixed(4))
+</script>
+
+<script id="ch0103/12">
+  var r = +prompt('r:')
+  var PI = 3.14
+  var volume = 4 / 3 * PI * Math.pow(r, 3)
+
+  console.log(volume.toFixed(2))
 </script>
 
 <script id="ch0103/13">
@@ -247,6 +341,35 @@
 
   console.log(sum)
 </script>
+
+<script id="ch0103/14">
+  var h = +prompt('桶深：')
+  var r = +prompt('桶底半径：')
+  var barrel = Math.PI * r * r * h / 1000
+
+  console.log(Math.ceil(20 / barrel))
+</script>
+
+<script id="ch0103/15">
+  var n = +prompt('苹果数：')
+  var x = +prompt('虫吃苹果的速度：')
+  var y = +prompt('经过的时间：')
+  var sum = n - Math.ceil(y / x)
+  console.log(sum)
+</script>
+
+<script id="ch0103/16">
+  var xa = +prompt('Xa:')
+  var xb = +prompt('Xb:')
+  var ya = +prompt('Ya:')
+  var yb = +prompt('Yb:')
+  
+  var x = Math.pow(xa - xb, 2)
+  var y = Math.pow(ya - yb, 2)
+
+  console.log(Math.sqrt(x + y).toFixed(3))
+</script>
+
 
 <script id="ch0103/17">
   var x1 = +prompt('x1:')
@@ -272,12 +395,70 @@
   console.log(an)
 </script>
 
+<script id="ch0103/19">
+  var a = +prompt('A:')
+  var b = +prompt('B:')
+
+  console.log(a * b)
+</script>
+
+<script id="ch0103/20">
+  var n = +prompt('n: ')
+
+  console.log(2 ** n)
+</script>
+
+<script id="ch0104/01">
+  var n = +prompt('N：')
+
+  if (n > 0) {
+    console.log('positive')
+  } else if (n === 0) {
+    console.log('zero')
+  } else if (n < 0) {
+    console.log('negative')
+  }
+</script>
+
+<script id="ch0104/02">
+  var n = +prompt('浮点数：')
+
+  if (n >= 0) {
+    console.log(n)
+  } else {
+    console.log(-n)
+  }
+</script>
+
+<script id="ch0104/03">
+  var n = +prompt('整数：')
+
+  if (n % 2 === 0) {
+    console.log('even')
+  } else {
+    console.log('odd')
+  }
+</script>
+
 <script id="ch0104/04">
   var x = prompt('x')
   if (x.charCodeAt() % 2 === 0) {
     console.log('NO')
   } else {
     console.log('YES')
+  }
+</script>
+
+<script id="ch0104/05">
+  var x = +prompt('x:')
+  var y = +prompt('y:')
+
+  if (x > y) {
+    console.log('>')
+  } else if(x === y) {
+    console.log('=')
+  } else if (x < y) {
+    console.log('<')
   }
 </script>
 
@@ -288,6 +469,80 @@
     console.log(1)
   } else {
     console.log(0)
+  }
+</script>
+
+<script id="ch0104/07">
+  var luck = +prompt('幸运：')
+  var enc = +prompt('鼓励：')
+
+  if (luck >= 10 || enc >= 20) {
+    console.log('1')
+  } else {
+    console.log('0')
+  }
+</script>
+
+<script id="ch0104/08">
+  var n = +prompt('n:')
+
+  if (n % 3 === 0 && n % 5 === 0) {
+    console.log('YES')
+  } else {
+    console.log('NO')
+  }
+</script>
+
+<script id="ch0104/09">
+  var n = +prompt('整数：')
+  var x = ''
+  var i = 0
+  if (n % 3 == 0) {
+    x += '3 '
+    i++
+  }
+  if (n % 5 === 0) {
+    x += '5 '
+    i++
+  }
+  if (n % 7 === 0) {
+    x += '7'
+    i++
+  }
+  if (i === 0) {
+    x = 'n'
+  }
+
+  console.log(x)
+</script>
+
+<script id="ch0104/10">
+  var chinese = +prompt('语文成绩：')
+  var math = +prompt('数学成绩：')
+
+  console.log(chinese < 60 || math < 60 ? 1 : 0)
+</script>
+
+<script id="ch0104/11">
+  var date = +prompt('日期：')
+  if (n === 1 || n === 3 || n === 5) {
+    console.log('NO')
+  } else {
+    console.log('YES')
+  }
+</script>
+
+<script id="ch0104/12">
+  var meters = +prompt('距离：')
+  var bike = 27 + (n / 3.0) + 23
+  var walk = n / 1.2
+
+  if (bike < walk) {
+    console.log('Bike')
+  } else if (bike > walk) {
+    console.log('Walk')
+  } else {
+    console.log('All')
   }
 </script>
 
@@ -302,6 +557,21 @@
   if (10 <= x && x < 20) {
     console.log((x / 2 - 1.5).toFixed(3))
   }
+</script>
+
+<script id="ch0104/14">
+  var g = +prompt('重量：')
+  var x = prompt('是否加急：')
+  var costs = 8
+
+  if (g > 1000) {
+    costs += Math.ceil((g - 1000) / 500) * 4
+  }
+  if (x === 'y') {
+    costs += 5
+  }
+  
+  console.log(costs)
 </script>
 
 <script id="ch0104/15">
@@ -354,6 +624,18 @@
   }
 </script>
 
+<script id="ch0104/18">
+  var x = +prompt('x: ')
+  var y = +prompt('y: ')
+
+  if (x >= -1 && x <= 1 && y >= -1 && y <= 1) {
+    console.log('yes')
+  } else {
+    console.log('no')
+  }
+</script>
+
+
 <script id="ch0104/19">
   
   var a = +prompt('整数1：')
@@ -376,11 +658,41 @@
   }
 </script>
 
+<script id="ch0104/20">
+  var a = +prompt('请输入浮点数a:')
+  var b = +prompt('请输入浮点数b:')
+  var c = +prompt('请输入浮点数c:')
+  var delta = b * b - 4 * a * c
+
+  if (delta > 0) {
+    var s_delta = Math.sqrt(delta)
+    var x1 = (-b + s_delta) / (2 * a)
+    var x2 = (-b - s_delta) / (2 * a)
+
+    console.log('x1=' + x1.toFixed(5) + ';' + 'x2=' + x2.toFixed(5))
+  } else if (delta === 0) {
+      var x = (-b) / (2 * a)
+
+      console.log('x1=x2=' + x.toFixed(5))
+  } else if (delta < 0) {
+      var s_delta = Math.sqrt(4 * a * c - b * b)
+
+      var x1r = (-b) / (2 * a)
+      var x1i = s_delta / (2 * a)
+      var x2r = (-b) / (2 * a)
+      var x2i = -s_delta / (2 * a)
+
+      var x1 = x1r.toFixed(5) + '+' + x1i.toFixed(5) + 'i'
+      var x2 = x2r.toFixed(5) + x2i.toFixed(5) + 'i'
+      console.log('x1=' + x1 + ';' + 'x2=' + x2 )
+  }
+</script>
+
 <script id="ch0104/21">
   var n = +prompt('苹果数：')
   var x = +prompt('虫吃苹果的速度：')
   var y = +prompt('经过的时间：')
-  var sum = n - Math.ceil(y / x )
+  var sum = n - Math.ceil(y / x)
   console.log(sum)
 </script>
 
@@ -401,16 +713,15 @@
 <script id="ch0105/02">
   var s_surplus = 0
   var surplus
-  var theNumber
   var result
 
-  for (var theNumber = 0; theNumber < 12; theNumber = theNumber + 1) {
+  for (var theNumber = 1; theNumber < 12; theNumber = theNumber + 1) {
     surplus = Number(prompt('请输入第 '+ (theNumber + 1) +' 个月的月末结余'))
     s_surplus = s_surplus + surplus
   }
   result = s_surplus / 12
   
-  console.log(result.toFixed(2))
+  console.log('$' + result.toFixed(2))
 </script>
 
 <script id="ch0105/03">
@@ -641,12 +952,16 @@
   var a = 0
   var b = 1
   var k = +prompt('k:')
-
-  for (var i = 0; i < k; i++) {
-    b = a + b
-    a = b - a
-    console.log(a)
+  if (k < 2) {
+    console.log(1)
+  } else {
+    for (var i = 3; i < k; i++) {
+      b = a + b
+      a = b - a
+      console.log(a)
+    }
   }
+  
 </script>
 
 <script id="ch0105/18">
