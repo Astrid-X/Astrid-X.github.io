@@ -3,3 +3,9 @@ var Astrid-X = {
 
   }
 }
+
+var Astrid-X = {
+  compact: function(array) {
+
+  }
+}
