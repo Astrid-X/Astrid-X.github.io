@@ -1,10 +1,10 @@
-var Astrid-X = {
+var astrid_x = {
   chunk: function(array, size) {
 
   }
 }
 
-var Astrid-X = {
+var astrid_x = {
   compact: function(array) {
 
   }
