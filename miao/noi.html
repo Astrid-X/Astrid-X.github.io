@@ -32,7 +32,7 @@
 </script>
 
 <script id="narcissistic " sample-input="153" sample-output="YES" comment="判断一个数s是否为水仙花数" >
-  var n = + prompt('数字：')
+  /*var n = + prompt('数字：')
   var x = n
   var digit
   var width = 0
@@ -55,13 +55,54 @@
     console.log('YES')
   } else {
     console.log('NO')
+  }*/
+  function numberWidth(n) {
+    var w = 0
+    var d
+
+    do {
+      d = n % 10
+      w++
+      n = (n - d) / 10
+    } while (n > 0)
+
+    return w
+  }
+
+  function power(x, n) {
+    var r = 1
+    for(var i = 0; i < n; i++) {
+      r *= x
+    }
+    return r
+  }
+
+  function digitPowerSum(x, e) {
+    var sum = 0
+    var digit
+
+    do {
+      digit = x % 10
+      sum += power(digit, e)
+      x = (x - digit) / 10
+    } while (x > 0)
+
+    return sum 
+  }
+
+  function isWater(n) {
+    var width = numberWidth(n)
+
+    var sum = digitPowerSum(n, width)
+
+    return sum === n
   }
 </script>
 
 <script id="narcissistics" sample-input="" sample-output="" comment="找出100到10000以内所有的水仙花数" >
-  var a, b, c, d, e, f; 
+  /*var a, b, c, d, e, f; 
 
-  for(i = 100; i < 100000; i++){
+  for (i = 100; i < 100000; i++) {
     var a = parseInt(i % 10);  
     var b = parseInt((i / 10 ) % 10);  
     var c = parseInt((i / 100) % 10);  
@@ -81,21 +122,141 @@
     if (a ** 6 + b ** 6 + c **6 + d ** 6 + e * 6 + f * 6 === i) {
     console.log(i +"\n");
     }
+  }*/
+  for(var i = 100; i< 10000; i++) {
+    if (isWater(i)) {
+      console.log(i)
+    }
   }
 </script>
 
 <script id="palindrom" sample-input="12321" sample-output="YES" comment="判断一个非负整数是否为回文数字">
+  function isPalindrom1(n) {
+    var width = numberWidth(n)
 
+    var c = Math.floor(width / 2)
+
+    for (var i = 0; i < c; i++) {
+      var r = parseInt(n / 10 ** i) % 10
+      var l = parseInt(n / 10 ** (width - i - 1)) % 10
+      if (r != l) {
+        return false
+      }
+    }
+
+    return true
+  }
+
+  function isPalindrom2(n) {//1234
+    var digit = 0
+    var sum = 0
+    var x = n
+
+    do {
+      digit = n % 10
+      sum = sum * 10 + digit
+      n = (n - digit) / 10
+    } while(n > 0)
+
+    return sum === x
+  }
 </script>
 
 
 <script id="weekday" sample-input="2018 6" sample-output="5" comment="输入年份与月份，给出该年该月的第一天是星期几">
-  
+  function isLeapYear(year) {
+    if (year % 400 === 0) {
+      return true
+    }
+
+    if (year % 100 === 0) {
+      return false
+    }
+
+    if (year % 4 === 0) {
+      return true
+    }
+
+    return false
+  }
+
+  function daysOfMonth(year, month) {
+    if (month === 2) {
+      if (isLeapYear(year)) {
+        return 29
+      } else {
+        return 28
+      }
+    } else {
+      switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+          return 31
+        default:
+          return 30
+      }
+    }
+  }
+
+  function weekday1(year, month) {
+    var days = 0
+
+    for(var y = 1; y < year; y++) {
+      for(var m = 1; m <=12; m++) {
+        days += daysOfMonth(y, m)
+      }
+    }
+
+    for(var m = 1; m < month; m++) {
+      days += daysOfMonth(year, m)
+    }
+
+    return (days + 1) % 7
+  }
+
+  function weekday2(year, month) {
+    var days = 0
+
+    for(var y = 1; y < year; y++) {
+      if (isLeapYear(y)) {
+        days += 366
+      } else {
+        days += 365
+      }
+    }
+
+    for(var m = 1; m < month; m++) {
+      days += daysOfMonth(year, m)
+    }
+
+    return (days + 1) % 7
+  }
+
+  function weekday3(year, month) {
+    year--
+
+    var days = year * 365 + Math.floor(year / 4) - Math.floor(year / 100) + Math.floor(year / 400)
+
+    year++
+    
+
+    for(var m = 1; m < month; m++) {
+      days += daysOfMonth(year, m)
+    }
+
+    return (days + 1) % 7
+  }
+
 </script>
 
 
 <script id="complete-number" sample-input="6" sample-output="YES" comment="判断一个数是否为完全数" >
-  var n = +prompt('请输入数字：')
+  /*var n = +prompt('请输入数字：')
   var sum = 0
   var theNumber
 
@@ -109,13 +270,22 @@
     console.log('YES')
   } else {
     console.log('NO')
+  }*/
+  function isCompleteNumber(n) {
+    var sum = 1
+
+    for(var i = 2; i < n; i++) {
+      if (n % i === 0) {
+        sum += i
+      }
+    }
+    return n === sum
   }
-  
 </script>
 
 <script id="complete-numbers" sample-input="" sample-output="" comment="输出10000以内所有的完全数" >
 
-  for (var x = 1; x < 10000; x++) {
+  /*for (var x = 1; x < 10000; x++) {
     var n = x
     var sum = 0
     var theNumber
@@ -131,11 +301,37 @@
     } else {
       
     }
+  }*/
+  for(var i = 0; i< 10000; i++) {
+    if (isCompleteNumber(i)) {
+      console.log(i)
+    }
   }
 </script>
 
 <script id="prime" sample-input="7" sample-output="YES" comment="判断一个数是否为素数">
-  
+  //素数两性定理
+  function isPrime(n) {
+    if (n < 2) {
+      return false
+    }
+
+    if (n == 2 || n == 3) {
+      return true
+    }
+
+    if (n % 6 !== 1 && n % 6 !== 5) {
+      return false
+    }
+    var sqrtn = Math.sqrt(n)
+    for(var i = 2; i <= sqrtn; i++) {
+      if (n % i === 0) {
+        return false
+      }
+    }
+
+    return true
+  }
 </script>
 
 
@@ -145,21 +341,50 @@
 
 
 <script id="itob" sample-input="123" sample-output="123" comment="数字转换成字符串" >
-  var n = +prompt('请输入数字：')
-  var digit
-  var result = ''
+  function digit2char(n) {
+    switch(n) {
+      case 0:
+        return '0'
+      case 1:
+        return '1'
+      case 2:
+        return '2'
+      case 3:
+        return '3'
+      case 4:
+        return '4'
+      case 5:
+        return '5'
+      case 6:
+        return '6'
+      case 7:
+        return '7'
+      case 8:
+        return '8'
+      case 9:
+        return '9'
+    }
+  }
 
-  do {
-    digit = n % 10
-    result = String.fromCharCode(digit + 48) + result
-    n = (n - digit) / 10
-  } while (n > 0)
+  function int2str(n) {
+    var str = ''
 
-  console.log(result)
+    do {
+      var digit = n % 10
+      str = digit2char(digit) + str
+      n = (n - digit) / 10
+    } while(n > 0)
+
+    return str
+  }
+
+  var input = +prompt('please in put your number')
+
+  console.log(int2str(input))
 </script>
 
 <script id="lcf&lcm" sample-input="12 9" sample-output="36 3" comment="给定两个数，求它们的最小公倍数和最大公约数" >
-  var x = +prompt('请输入第一位数：')
+  /*var x = +prompt('请输入第一位数：')
   var y = +prompt('请输入第二位数：')
 
   var min = x > y ? y : x
@@ -177,11 +402,23 @@
       console.log(i)
       break
     }
+  }*/
+  function lcf(m, n) {
+    var max = m > n ? m : n
+    var min = m > n ? n : m
+
+    do {
+      t = max - min
+      max = t > min ? t : min
+      min = t > min ? min : t
+    } while(min != 0)
+
+    return max
   }
 </script>
 
 <script id="7" sample-input="" sample-output="" comment="敲7" >
-  var n
+  /*var n
   var digit
 
   for (var i = 1; i < 100; i++) {
@@ -199,6 +436,21 @@
         n = (n - digit) / 10
       }
     }
+  }*/
+  var isKnockedBy7 = function (x) {
+    if (x % 7 === 0) {
+      return true
+    }
+    var digit
+    do {
+      digit = x % 10
+      if (digit === 7) {
+        return true
+      }
+      x = (x -digit) / 10
+    } while (x > 0)
+
+    return false
   }
 </script>
 
@@ -248,7 +500,7 @@
   
   console.log(n)
 
-<script id="/ch0103/04">
+<script id="ch0103/04">
   var n = +prompt('被除数：')
   var m = +prompt('除数：')
   while (n > m) {
