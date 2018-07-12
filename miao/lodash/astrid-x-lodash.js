@@ -6,9 +6,7 @@ var astrid_x = {
     }
     return result
   }
-}
 
-var astrid_x = {
   compact: function(array) {
     var result = []
     for (var i = 0; i < array.length; i++) {
