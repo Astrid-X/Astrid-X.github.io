@@ -16,6 +16,19 @@ var astrid_x = {
     }
     return result
   }
-  
+
+  difference: function (array,...value) {
+    let res = []
+    let val = value[0]
+    for (let i = 1; i < value.length; i++) {
+      val = val.concat(value[i])
+    }
+    for (let k = 0;k < array.length; k++) {
+      if (!val.includes(array[k])) {
+        res.push(array[k])
+      }
+    }
+    return res
+  }
 }
 
