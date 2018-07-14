@@ -6,7 +6,7 @@ var astrid_x = {
       result.push(array.slice(i, size + i))
     }
     return result
-  }，
+  },
 
   compact:
   function(array) {
@@ -17,7 +17,7 @@ var astrid_x = {
       }
     }
     return result
-  }，
+  },
 
   difference:
   function (array,...value) {
@@ -32,7 +32,7 @@ var astrid_x = {
       }
     }
     return res
-  }，
+  },
 
 
 }
