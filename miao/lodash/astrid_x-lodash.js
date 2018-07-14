@@ -1,13 +1,15 @@
 var astrid_x = {
-  chunk: function(array, size) {
+  chunk:
+  function(array, size) {
     var result = []
     for (var i = 0; i < array.length; i += size) {
       result.push(array.slice(i, size + i))
     }
     return result
-  }
+  }，
 
-  compact: function(array) {
+  compact:
+  function(array) {
     var result = []
     for (var i = 0; i < array.length; i++) {
       if (array[i]) {
@@ -15,9 +17,10 @@ var astrid_x = {
       }
     }
     return result
-  }
+  }，
 
-  difference: function (array,...value) {
+  difference:
+  function (array,...value) {
     let res = []
     let val = value[0]
     for (let i = 1; i < value.length; i++) {
@@ -29,8 +32,8 @@ var astrid_x = {
       }
     }
     return res
-  }
+  }，
 
-  differenceBy
+  
 }
 
