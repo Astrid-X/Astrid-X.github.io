@@ -20,13 +20,13 @@ var astrid_x = {
   },
 
   difference:
-  function (array,...value) {
+  function(array,...value) {
     let res = []
     let val = value[0]
     for (let i = 1; i < value.length; i++) {
       val = val.concat(value[i])
     }
-    for (let k = 0;k < array.length; k++) {
+    for (let k = 0; k < array.length; k++) {
       if (!val.includes(array[k])) {
         res.push(array[k])
       }
@@ -34,6 +34,26 @@ var astrid_x = {
     return res
   },
 
+  drop:
+  function(array, n = 1) {
+    let res = []
+    for (let i = n; i < array.length; i++) {
+      res.push(array[i])
+    }
+    return res
+  },
 
+  dropRight:
+  function(array, n = 1) {
+    let res = []
+    if (n >= array.length) {
+      return res
+    }
+    for (var i = 0; i < array.length - n; i++) {
+      res.push(array[i])
+    }
+    return res
+  },
 }
+
 
