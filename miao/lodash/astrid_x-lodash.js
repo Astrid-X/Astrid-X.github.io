@@ -1,4 +1,4 @@
-let astrid_x = {
+var astrid_x = {
   chunk:
   function(array, size) {
     let result = []
