@@ -137,7 +137,7 @@ var astrid_x = {
   pull:
   function(array, ...value) {
     for (var i = array.length; i >= 0; i--) {
-      for (var j = value.length; i >= 0; j--) {
+      for (var j = value.length; j >= 0; j--) {
         if (array[i] === array[j]) {
           array.slice(i, 1)
         }
