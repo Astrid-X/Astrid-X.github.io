@@ -136,10 +136,10 @@ var astrid_x = {
 
   pull:
   function(array, ...value) {
-    var arrrayLen = array.length
-    var valueLen = value.length
-    for (var i = arrrayLen; i >= 0; i--) {
-        for (var j = value.length; j >= 0; j--) {
+    let arrrayLen = array.length
+    let valueLen = value.length
+    for (let i = arrrayLen; i >= 0; i--) {
+        for (let j = value.length; j >= 0; j--) {
             if (array[i] === value[j]) {
                 array.splice(i, 1)
             }
@@ -147,6 +147,15 @@ var astrid_x = {
     }
     return array
   },  
+
+  reverse:
+  function(array) {
+    let res = []
+    for (var i = array.length - 1; i >= 0; i--) {
+      res.push(array[i])
+    }
+    return res
+  },
 
 }
 
