@@ -135,17 +135,18 @@ var astrid_x = {
   },
 
   pull:
-  function(array, ...value) {
-    for (var i = array.length; i >= 0; i--) {
-      for (var j = value.length; j >= 0; j--) {
-        if (array[i] === value[j]) {
-          array.slice(i, 1)
+  function(array, ...arr) {
+    var arrrayLen = array.length
+    var arrLen = arr.length
+    for (var i = arrrayLen; i >= 0; i--) {
+        for (var j = arr.length; j >= 0; j--) {
+            if (array[i] === arr[j]) {
+                array.splice(i, 1)
+            }
         }
-      }
     }
     return array
-  },
+  },  
 
-  
 }
 
