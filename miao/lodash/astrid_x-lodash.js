@@ -204,8 +204,8 @@ var astrid_x = {
 
   sumBy:
   function(array, predicate = identity) {
-    var predicate = iteratee(predicate)
-    var res = 0
+    predicate = iteratee(predicate)
+    let res = 0
     for (let i = 0; i < array.length; i++) {
       res += predicate(array[i])
     }
