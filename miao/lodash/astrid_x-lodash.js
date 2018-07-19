@@ -78,7 +78,36 @@ var astrid_x = {
     return res
   },
 
-  
+  falttenDeep:
+  function(array) {
+    let res = []
+    for (let i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        let tmp = flattenDeep(array[i])
+        res = [...res, ...tmp]
+      } else {
+        res.push(array[i])
+      }
+    }
+    return res
+  },
+
+  flattenDepth:
+  function(array, depth = 1) {
+    if (depth === 0) {
+      return array.slice()
+    }
+    let res = []
+    for(let i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        let tmp = flattenDepth(array[i], depth - 1)
+        res = [...res, ...tmp]
+      } else {
+        res.push(array[i])
+      }
+    }
+    return res
+  },  
 
   head:
   function(array) {
@@ -168,7 +197,63 @@ var astrid_x = {
     return res
   },
 
+  sum:
+  function(array) {
+    return sumBy(array, identity)
+  },
+
+  sumBy:
+  function(array, iteratee) {
+    var res = 0
+    for (let i = 0; i < array.length; i++) {
+      res += iteratee(array[i])
+    }
+    return res
+  },
+
+  identity:
+  function(value) {
+    return value
+  },
+
+  matches:
+  function(src) {
+    return function(obj) {
+      for (let key in src) {
+        if (src[key] !== obj[key]) {
+          return false
+        }
+      }
+      return true
+    }
+  },
+
+  ary:
+  function(func, n = func.length) {
+    return function(...args) {
+      return func(...args.slice(0, n))
+    }
+  },
+
+  unary:
+  function(func) {
+    return function(value) {
+      return func(value)
+    }
+  },
+
+  negate:
+  function(func) {
+    return function(...args) {
+      return !func(...args)
+    }
+  },
+
+  spread:
+  function(func) {
+    return function(ary) {
+      return func(...args)
+    }
+  },
   
-
 }
-
