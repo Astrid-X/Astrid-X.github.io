@@ -78,6 +78,37 @@ var astrid_x = {
     return res
   },
 
+  falttenDeep:
+  function(ary) {
+    var result = []
+    for (var i = 0; i < ary.length; i++) {
+      if (Array.isArray(ary[i])) {
+        var tmp = flattenDeep(ary[i])
+        result = [...result, ...tmp]
+      } else {
+        result.push(ary[i])
+      }
+    }
+    return result
+  },
+  
+  flattenDepth:
+  function(ary, depth = 1) {
+    if (depth === 0) {
+      return ary.slice()
+    }
+    var result = []
+    for(var i = 0;i<ary.length;i++) {
+      if (Array.isArray(ary[i])) {
+        var tmp = flattenDepth(ary[i], depth - 1)
+        result = [...result, ...tmp]
+      } else {
+        result.push(ary[i])
+      }
+    }
+    return result
+  },
+
   head:
   function(array) {
     return array[0]
@@ -156,6 +187,17 @@ var astrid_x = {
     }
     return res
   },
+
+  join:
+  function(array, separator = ',') {
+    let res = '' + array[0]
+    for (let i = 1; i < array.length; i++) {
+      res += String(separator) + array[i] 
+    }
+    return res
+  },
+
+  
 
 }
 
