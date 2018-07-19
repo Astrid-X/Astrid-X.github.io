@@ -78,7 +78,7 @@ var astrid_x = {
     return res
   },
 
-  falttenDeep:
+  flattenDeep:
   function(array) {
     let res = []
     for (let i = 0; i < array.length; i++) {
@@ -203,10 +203,11 @@ var astrid_x = {
   },
 
   sumBy:
-  function(array, iteratee) {
+  function(array, predicate = identity) {
+    var predicate = iteratee(predicate)
     var res = 0
     for (let i = 0; i < array.length; i++) {
-      res += iteratee(array[i])
+      res += predicate(array[i])
     }
     return res
   },
@@ -252,8 +253,8 @@ var astrid_x = {
   spread:
   function(func) {
     return function(ary) {
-      return func(...args)
+      return func.apply(null, ary)
     }
   },
-  
+
 }
