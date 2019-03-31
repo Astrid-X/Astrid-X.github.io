@@ -1,2 +1,2 @@
-# Astrid-X.github.io
+# practices
 初学...
